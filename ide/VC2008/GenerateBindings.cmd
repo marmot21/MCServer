@@ -1,3 +1,3 @@
 set ALLTOLUA_WAIT=N
-cd ..\source
+cd ..\..\src
 AllToLua.bat
