@@ -1,9 +1,9 @@
-[submodule "MCServer/Plugins/Core"]
+[submodule "res/Plugins/Core"]
 	path = res/Plugins/Core
 	url = git@github.com:mc-server/Core.git
-[submodule "MCServer/Plugins/ProtectionAreas"]
+[submodule "res/Plugins/ProtectionAreas"]
 	path = res/Plugins/ProtectionAreas
 	url = git@github.com:mc-server/ProtectionAreas.git
-[submodule "MCServer/Plugins/TransAPI"]
+[submodule "res/Plugins/TransAPI"]
 	path = res/Plugins/TransAPI
 	url = git@github.com:bearbin/transapi.git
