@@ -7,7 +7,7 @@
 #include "WSSCompact.h"
 #include "../World.h"
 #include "zlib.h"
-#include <json/json.h>
+#include <../jsoncpp/include/json/json.h>
 #include "../StringCompression.h"
 #include "../BlockEntities/ChestEntity.h"
 #include "../BlockEntities/DispenserEntity.h"

@@ -3,7 +3,7 @@
 
 #include "NoteEntity.h"
 #include "../World.h"
-#include <json/json.h>
+#include <../jsoncpp/include/json/json.h>
 
 
 cNoteEntity::cNoteEntity(int a_BlockX, int a_BlockY, int a_BlockZ, cWorld * a_World)
