@@ -27,7 +27,7 @@ ifeq ($(CC),cc)
 CC = /usr/bin/g++
 endif
 
-all: MCServer/MCServer
+all: out/MCServer
 
 
 
@@ -143,18 +143,19 @@ endif
 #
 
 INCLUDE = -I.\
-		-Isource\
-		-Isource/md5\
-		-Isource/items\
-		-Isource/blocks\
-		-Itolua++-1.0.93/src/lib\
-		-Ilua-5.1.4/src\
-		-Izlib-1.2.7\
-		-IiniFile\
-		-Itolua++-1.0.93/include\
-		-Ijsoncpp-src-0.5.0/include\
-		-Ijsoncpp-src-0.5.0/src/lib_json\
-		-Iexpat
+		-I src\
+		-I src/md5\
+		-I src/items\
+		-I src/blocks\
+		-I lib/tolua/src/lib\
+		-I lib/lua/src\
+		-I lib/zlib\
+		-I lib/inifile\
+		-I lib/tolua/include\
+		-I lib/jsoncpp/include\
+		-I lib/jsoncpp/src/lib_json\
+		-I lib/expat\
+		-I lib 
 
 
 
@@ -166,18 +167,18 @@ INCLUDE = -I.\
 
 # 2012_11_08 _X: Removed: squirrel_3_0_1_stable 
 
-SOURCES := $(shell find CryptoPP lua-5.1.4 jsoncpp-src-0.5.0 zlib-1.2.7 source tolua++-1.0.93 iniFile expat '(' -name '*.cpp' -o -name '*.c' ')')
+SOURCES := $(shell find src lib '(' -name '*.cpp' -o -name '*.c' ')')
 SOURCES := $(filter-out %minigzip.c %lua.c %tolua.c %toluabind.c %LeakFinder.cpp %StackWalker.cpp %example.c,$(SOURCES))
 OBJECTS := $(patsubst %.c,$(BUILDDIR)%.o,$(SOURCES))
 OBJECTS := $(patsubst %.cpp,$(BUILDDIR)%.o,$(OBJECTS))
 
 -include $(patsubst %.o,%.d,$(OBJECTS))
 
-MCServer/MCServer : $(OBJECTS)
-	$(CC) $(LNK_OPTIONS) $(OBJECTS) $(LNK_LIBS) -o MCServer/MCServer
+out/MCServer : $(OBJECTS)
+	$(CC) $(LNK_OPTIONS) $(OBJECTS) $(LNK_LIBS) -o out/MCServer
 
 clean : 
-		rm -rf $(BUILDDIR) MCServer/MCServer
+		rm -rf $(BUILDDIR) out/MCServer
 
 install : MCServer
 		cp MCServer MCServer

@@ -23,7 +23,7 @@
 
 #include "MersenneTwister.h"
 
-#include "../iniFile/iniFile.h"
+#include "iniFile.h"
 #include "Vector3f.h"
 
 #include <fstream>

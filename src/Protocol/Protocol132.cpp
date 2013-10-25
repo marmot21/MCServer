@@ -9,7 +9,7 @@
 #include "../Server.h"
 #include "../World.h"
 #include "../ClientHandle.h"
-#include "../../CryptoPP/randpool.h"
+#include "cryptopp/randpool.h"
 #include "../Item.h"
 #include "ChunkDataSerializer.h"
 #include "../Entities/Player.h"
