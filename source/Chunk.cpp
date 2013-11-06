@@ -682,17 +682,17 @@ void cChunk::ProcessQueuedSetBlocks(void)
 	Int64 CurrTick = m_World->GetWorldAge();
 	for (sSetBlockQueueVector::iterator itr = m_SetBlockQueue.begin(); itr != m_SetBlockQueue.end();)
 	{
-		if (itr->m_Tick < CurrTick)
+		if (itr->m_Tick <= CurrTick)
 		{
-			// Not yet
-			++itr;
-			continue;
+			// Current world age is bigger than/equal to target world age - delay time reached
+			SetBlock(itr->m_RelX, itr->m_RelY, itr->m_RelZ, itr->m_BlockType, itr->m_BlockMeta);
+			itr = m_SetBlockQueue.erase(itr);
 		}
 		else
 		{
-			// Now is the time to set the block
-			SetBlock(itr->m_RelX, itr->m_RelY, itr->m_RelZ, itr->m_BlockType, itr->m_BlockMeta);
-			itr = m_SetBlockQueue.erase(itr);
+			// Not yet
+			++itr;
+			continue;			
 		}
 	}  // for itr - m_SetBlockQueue[]
 }
