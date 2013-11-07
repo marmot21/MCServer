@@ -862,32 +862,6 @@
     <Text Include="..\MCServer\crafting.txt" />
     <Text Include="..\MCServer\furnace.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="CryptoPP.vcxproj">
-      <Project>{3423ec9a-52e4-4a4d-9753-edebc38785ef}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="expat.vcxproj">
-      <Project>{5fcfaf8d-ff2c-456d-a72c-1d76f913ad96}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="JsonCpp.vcxproj">
-      <Project>{5aaa90b9-946d-4034-83f3-676b06a6e326}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="Lua.vcxproj">
-      <Project>{082e8185-7b3a-4945-8c82-9132341a329d}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="ToLua.vcxproj">
-      <Project>{eeab54ad-114c-4ab8-8482-0a52d502bd35}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="zlib.vcxproj">
-      <Project>{ea9d50fd-937a-4ef5-8c37-5f4175af4fea}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
