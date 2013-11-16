@@ -166,7 +166,10 @@ public:
 	void HandleChat             (const AString & a_Message);
 	void HandleCreativeInventory(short a_SlotNum, const cItem & a_HeldItem);
 	void HandleDisconnect       (const AString & a_Reason);
-	void HandleEntityAction     (int a_EntityID, char a_ActionID);
+	//void HandleEntityAction     (int a_EntityID, char a_ActionID);
+	void HandleEntityCrouch(bool a_IsCrouching);
+	void HandleEntityLeaveBed(void);
+	void HandleEntitySprinting(bool a_IsSprinting);
 	bool HandleHandshake        (const AString & a_Username);
 	void HandleKeepAlive        (int a_KeepAliveID);
 	void HandleLeftClick        (int a_BlockX, int a_BlockY, int a_BlockZ, char a_BlockFace, char a_Status);

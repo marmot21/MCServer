@@ -1239,7 +1239,42 @@ bool cClientHandle::HandleHandshake(const AString & a_Username)
 
 
 
-void cClientHandle::HandleEntityAction(int a_EntityID, char a_ActionID)
+void cClientHandle::HandleEntityCrouch(bool a_IsCrouching)
+{
+	m_Player->SetCrouch(!a_IsCrouching);
+}
+
+
+
+
+
+void cClientHandle::HandleEntityLeaveBed(void)
+{
+	m_Player->GetWorld()->BroadcastPlayerAnimation(*m_Player, 3);
+}
+
+
+
+
+
+void cClientHandle::HandleEntitySprinting(bool a_IsSprinting)
+{
+	if(a_IsSprinting)
+	{
+		m_Player->SetSprint(false);
+	}
+	else
+	{
+		m_Player->SetSprint(true);
+		SendPlayerMaxSpeed();
+	}
+}
+
+
+
+
+
+/*void cClientHandle::HandleEntityAction(int a_EntityID, char a_ActionID)
 {
 	if (a_EntityID != m_Player->GetUniqueID())
 	{
@@ -1276,7 +1311,7 @@ void cClientHandle::HandleEntityAction(int a_EntityID, char a_ActionID)
 			break;
 		}
 	}
-}
+}*/
 
 
 
